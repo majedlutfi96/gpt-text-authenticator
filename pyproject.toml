@@ -1,0 +1,66 @@
+[project]
+name = "gpt-text-authenticator"
+version = "0.1.0"
+description = "An AI powered tool to detect and humanize AI generated text"
+readme = "README.md"
+authors = [
+    { name = "Majed Lutfi", email = "majedelutfi@hotmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+gpt-text-authenticator = "gpt_text_authenticator:main"
+
+[build-system]
+requires = ["uv_build>=0.8.4,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.17.1",
+    "pre-commit>=4.3.0",
+    "ruff>=0.12.12",
+]
+
+
+# Ruff
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "W",  # pycodestyle warnings
+    "I",  # isort
+    "N",  # pep8-naming
+    "D",  # pydocstyle
+]
+ignore = [
+    "D203", # Conflicts with D211
+    "D213", # Conflicts with D212
+]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+line-ending = "auto"
+skip-magic-trailing-comma = false
+
+# MyPy
+[tool.mypy]
+strict = true
+
+
+# CSpell
+[tool.cspell]
+language = "en"
+words = ["Majed", "Lutfi"]
+ignorePaths = [
+    "*.lock",
+    ".venv/",
+    "dist/",
+    "build/",
+    ".gitignore",
+]
