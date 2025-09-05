@@ -17,6 +17,7 @@
     "pycodestyle",
     "isort",
     "pydocstyle",
+    "burstiness",
     "pyupgrade"
   ]
 }
