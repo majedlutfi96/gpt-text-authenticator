@@ -18,6 +18,11 @@
     "isort",
     "pydocstyle",
     "burstiness",
-    "pyupgrade"
+    "pyupgrade",
+    "ollama",
+    "langchain",
+    "genai",
+    "dotenv",
+    "llm"
   ]
 }
