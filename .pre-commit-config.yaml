@@ -28,6 +28,7 @@ repos:
   rev: v1.17.1
   hooks:
     - id: mypy
+      additional_dependencies: ["pydantic", "langchain-core", "langchain-google-genai"]
 
 
 - repo: https://github.com/asottile/pyupgrade

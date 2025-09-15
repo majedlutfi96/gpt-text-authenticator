@@ -23,6 +23,7 @@
     "langchain",
     "genai",
     "dotenv",
-    "llm"
+    "llm",
+    "pydantic"
   ]
 }
