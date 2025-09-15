@@ -25,6 +25,8 @@ pip install gpt-text-authenticator
 
 ## Usage
 
+### Command Line Interface
+
 The tool provides a simple command-line interface for easy analysis.
 
 ```bash
@@ -34,6 +36,38 @@ gpt-text-authenticator evaluate path/to/your/document.txt
 # Launch the interactive web API
 gpt-text-authenticator run-server
 ```
+
+### Python API
+
+You can also use the library directly in your Python code:
+
+```python
+from gpt_text_authenticator.authenticator import GPTTextAuthenticator
+from dotenv import load_dotenv
+import os
+
+# Load environment variables (API keys)
+load_dotenv()
+
+# Initialize the authenticator
+provider = os.getenv("provider", "google")  # "google" or "ollama"
+model = os.getenv("model", "gemini-2.5-pro")  # Model name
+api_key = os.getenv("api_key")  # Your API key
+
+authenticator = GPTTextAuthenticator(provider, model, api_key)
+
+# Evaluate text
+result = authenticator.evaluate_text("Your text to analyze goes here.")
+
+# Access the analysis results
+print(f"AI Score: {result.score}/100")
+print(f"Feedback: {result.feedback}")
+print("Reasons:")
+for reason in result.reasons:
+    print(f"- {reason}")
+```
+
+See the [examples directory](./examples) for more detailed usage examples.
 
 ## Contributing
 

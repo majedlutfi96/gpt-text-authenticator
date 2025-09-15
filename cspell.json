@@ -24,6 +24,7 @@
     "genai",
     "dotenv",
     "llm",
-    "pydantic"
+    "pydantic",
+    "getenv"
   ]
 }
